@@ -77,7 +77,11 @@ func (t *TCarts) Fill() {
 //
 // Improvements:
 // We would prune the duplicates instantly.
-// A more efficient comparison than sliceToString == sliceToString
+// A more efficient comparison than sliceToString == sliceToString.
+// We could use an array (not a slice) as map key.
+// Compare sliceAsMapKey() for a demonstration.
+// The supreme solution would be to code the pattern of "increasing duplicity".
+//   First permutations are always new, subsequent permutations contain more and more repetition.
 func permutateElements(pool []string, maxLotSize int) [][][]string {
 
 	lglc := func(fmt string, vals ...interface{}) {} // log local
@@ -149,4 +153,23 @@ func permutateElements(pool []string, maxLotSize int) [][][]string {
 	// fmt.Printf("\n\n")
 
 	return deduped
+}
+
+func sliceAsMapkey() {
+	var mp map[[4]int]bool
+	mp = map[[4]int]bool{}
+
+	s1 := [4]int{1, 2, 3}
+	s2 := [4]int{1, 2, 3}
+	s3 := [4]int{3, 3, 3}
+	s4 := [4]int{1, 2, 3}
+
+	mp[s1] = true
+	mp[s2] = true
+	mp[s3] = true
+	mp[s4] = true
+
+	for k, v := range mp {
+		log.Printf("%#v %v", k, v)
+	}
 }

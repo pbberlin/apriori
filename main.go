@@ -10,6 +10,10 @@ func init() {
 }
 
 func main() {
+
+	// sliceAsMapkey()
+	// return
+
 	Conf.Carts.Sort()
 	Conf.Carts.Fill()
 	// Conf.Carts.String()
