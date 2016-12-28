@@ -65,6 +65,19 @@ func (t *TCarts) Fill() {
 //    All possible 2 out of 3 then recurses deeper
 // => All possible 1 out of 2 (desired lotSize)
 //
+// Pool is expected to be sorted.
+//
+// Formula: (Poolsize)(Poolsize-1)(Poolsize-2)...(maxLotSize+1)(maxLotSize)
+//          ----------------------------------------------------
+//          (1*2*...(maxLotSize-1)*maxLotSize)
+// => There are maxLotSize! duplicates
+//
+// Deduplication is kept in a second stage - for clarity.
+// But huge memory allocation waste is incurred.
+//
+// Improvements:
+// We would prune the duplicates instantly.
+// A more efficient comparison than sliceToString == sliceToString
 func permutateElements(pool []string, maxLotSize int) [][][]string {
 
 	lglc := func(fmt string, vals ...interface{}) {} // log local

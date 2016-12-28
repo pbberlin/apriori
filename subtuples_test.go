@@ -58,10 +58,30 @@ func Test_permutateElements(t *testing.T) {
 					[]string{"A", "C", "D", "E"},
 					[]string{"B", "C", "D", "E"},
 				},
+				// 5*4*3 / (1*2*3) = 60 / 6 = 10
+				[][]string{
+					[]string{"A", "B", "C"},
+
+					[]string{"A", "B", "D"},
+					[]string{"A", "C", "D"},
+					[]string{"B", "C", "D"},
+
+					[]string{"A", "B", "E"},
+					[]string{"A", "C", "E"},
+					[]string{"B", "C", "E"},
+
+					[]string{"A", "D", "E"},
+					[]string{"B", "D", "E"},
+					[]string{"C", "D", "E"},
+				},
 				[][]string{
 					[]string{"A", "B"}, []string{"A", "C"}, []string{"B", "C"},
 					[]string{"A", "D"}, []string{"B", "D"},
 					[]string{"C", "D"},
+					[]string{"A", "E"}, []string{"B", "E"}, []string{"C", "E"}, []string{"D", "E"},
+				},
+				[][]string{
+					[]string{"A"}, []string{"B"}, []string{"C"}, []string{"D"}, []string{"E"},
 				},
 			},
 		},
