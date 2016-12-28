@@ -1,0 +1,11 @@
+*.log
+*.lnk
+exceldb
+*.exe
+*.sqlite
+setenv_unix?.sh
+setenv?.bat
+setenv_?.bat
+tmp/*
+*.key
+*.pem

@@ -1,0 +1,8 @@
+{
+	"app_name": "A Priori shopping cart",
+	"carts_with_meta":{
+		"carts":     [ [3,2,1],[1,2,4],[1,3,4],[1,3,5],[2,3,4],[2,3],[2,3]],
+		"min_support":     0.1,
+		"min_confidence":     0.2		
+	}
+}
