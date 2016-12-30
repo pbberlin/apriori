@@ -134,6 +134,7 @@ func permutateElements(pool []string, maxLotSize int) [][][]string {
 	fc(pool, 0)
 
 	dupes := map[string]bool{}
+
 	deduped := make([]([][]string), len(pool))
 	for i, v := range gatherSlice {
 		if len(v) > 0 {
